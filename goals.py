@@ -1,56 +1,13 @@
-# import requests
-# from typing import Optional
-# import os
-# import pytesseract
-# import uuid
-# import json
-import subprocess
-import sys
-try:
-    import requests
-except ModuleNotFoundError:
-    print("🔴 'requests' not found. Installing now...")
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "requests"])
-    import requests
-
-try:
-    from dotenv import load_dotenv
-except ModuleNotFoundError:
-    print("🔴 'dotenv' not found. Installing now...")
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "python-dotenv"])
-    from dotenv import load_dotenv
-
-try:
-    import cv2
-except ModuleNotFoundError:
-    print("🔴 OpenCV not found. Installing now...")
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python-headless"])
-    import cv2
-    
-required_packages = [
-    "pytesseract",
-    "termcolor",
-    "uuid",  # Built-in, no installation needed
-    "json",  # Built-in, no installation needed
-    "subprocess",  # Built-in, no installation needed
-    "sys"  # Built-in, no installation needed
-]
-
-def install_missing_packages(packages):
-    for package in packages:
-        try:
-            __import__(package)  # Try importing
-        except ModuleNotFoundError:
-            print(f"🔴 {package} not found. Installing now...")
-            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-# Install missing packages
-install_missing_packages(required_packages)
+import requests
+from typing import Optional
+import os
+from dotenv import load_dotenv
+import cv2 as cv
 import pytesseract
 import uuid
 import json
 import subprocess
 import sys
-
 
 # detecting anf extracting text
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
