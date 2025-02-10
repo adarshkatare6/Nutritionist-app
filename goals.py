@@ -1,4 +1,4 @@
-import requests
+# import requests
 from typing import Optional
 import os
 from dotenv import load_dotenv
@@ -8,8 +8,14 @@ import pytesseract
 from termcolor import colored
 import uuid
 import json
-
-
+import subprocess
+import sys
+try:
+    import requests
+except ModuleNotFoundError:
+    print("🔴 'requests' not found. Installing now...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "requests"])
+    import requests
 
 # detecting anf extracting text
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
