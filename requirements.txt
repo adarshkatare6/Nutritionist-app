@@ -1,3 +1,4 @@
+pip
 requests
 numpy
 opencv-python-headless
