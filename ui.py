@@ -3,7 +3,7 @@ import subprocess
 import numpy as np
 import cv2 as cv 
 
-st.title("Run a Python Script and Display Output")
+st.title("Welcome to Expert Nutritionist")
 uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
 
 if uploaded_file is not None:
