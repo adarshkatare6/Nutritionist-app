@@ -1,7 +1,7 @@
 # import requests
 from typing import Optional
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import cv2 as cv
 import time
 import pytesseract
@@ -16,6 +16,13 @@ except ModuleNotFoundError:
     print("🔴 'requests' not found. Installing now...")
     subprocess.check_call([sys.executable, "-m", "pip", "install", "requests"])
     import requests
+
+try:
+    from dotenv import load_dotenv
+except ModuleNotFoundError:
+    print("🔴 'dotenv' not found. Installing now...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "python-dotenv"])
+    from dotenv import load_dotenv
 
 # detecting anf extracting text
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
