@@ -20,10 +20,10 @@ if uploaded_file is not None:
 # Button to run the script
 if st.button("Run Script"):
     try:
-        script_path = os.path.join(os.getcwd(), "Nutritionist-app", "goals.py")
+        # script_path = os.path.join(os.getcwd(), "Nutritionist-app", "goals.py")
 
         # Run the script
-        process = subprocess.Popen(["python", script_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        process = subprocess.Popen(["python","goals.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
         output, error = process.communicate()  # Get stdout and stderr
        
